@@ -69,11 +69,10 @@ const quotes = [{
 /***
  * `getRandomQuote` function
  ***/
-function getRandomQuote() {
-
+function getRandomQuote(arr) {
+    let randomNumber = Math.ceil(Math.random() * arr.length);
+    return randomNumber;
 }
-
-
 
 /***
  * `printQuote` function
