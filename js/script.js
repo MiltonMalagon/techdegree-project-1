@@ -13,49 +13,49 @@ project 1 - A Random Quote Generator
 const quotes = [{
         citation: "Client-Side Programming with JavaScript",
         quote: "If you thought building web pages was cool, you're going to love what you can do with a little programming.",
-        source: "― Andy Harris",
+        source: "Andy Harris",
         year: 2014
     },
     {
         citation: "Interview with the Vampire",
         quote: "The only power that exists is inside ourselves.",
-        source: "― Anne Rice",
+        source: "Anne Rice",
         year: 1976
     },
     {
         citation: "The Happy Prince and Other Stories",
         quote: "I am so clever that sometimes I don't understand a single word of what I am saying.",
-        source: "― Oscar Wilde",
+        source: "Oscar Wilde",
         year: 1888
     },
     {
         citation: "Harry Potter and the Chamber of Secrets",
         quote: "It is our choices, Harry, that show what we truly are, far more than our abilities.",
-        source: "― J.K. Rowling",
+        source: "J.K. Rowling",
         year: 1998
     },
     {
         citation: "The Alchemist",
         quote: "When we love, we always strive to become better than we are. When we strive to become better than we are, everything around us becomes better too.",
-        source: "― Paulo Coelho",
+        source: "Paulo Coelho",
         year: 1988
     },
     {
         citation: "The Fellowship of the Ring",
         quote: "All we have to decide is what to do with the time that is given us.",
-        source: "― J.R.R. Tolkien",
+        source: "J.R.R. Tolkien",
         year: 1954
     },
     {
         citation: "Les Misérables",
         quote: "He never went out without a book under his arm, and he often came back with two.",
-        source: "― Victor Hugo",
+        source: "Victor Hugo",
         year: 1862
     },
     {
         citation: "Dracula",
         quote: "I am longing to be with you, and by the sea, where we can talk together freely and build our castles in the air.",
-        source: "― Bram Stoker",
+        source: "Bram Stoker",
         year: 1897
     },
     {
@@ -73,17 +73,30 @@ console.log(quotes);
  ***/
 function getRandomQuote(arr) {
     let randomNumber = Math.floor(Math.random() * arr.length);
-    let randomObject = arr[randomNumber];
-    console.log(randomNumber, randomObject);
+    let randomItem = arr[randomNumber];
+    return randomItem;
 }
-
-getRandomQuote(quotes);
 
 /***
  * `printQuote` function
  ***/
+function printQuote() {
+    let randomObject = getRandomQuote(quotes);
+    let randomHTML = `
+      <p class="quote">${randomObject.quote}</p>
+      <p class="source">${randomObject.source}
+    `;
+    if (randomObject.citation) {
+        randomHTML += `<span class="citation">${randomObject.citation}</span>`;
+    }
+    if (randomObject.year) {
+        randomHTML += `<span class="year">${randomObject.year}</span>`;
+    }
+    randomHTML += `</p>`;
+    return randomHTML;
+}
 
-
+console.log(printQuote());
 
 /***
  * click event listener for the print quote button
