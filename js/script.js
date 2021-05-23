@@ -61,7 +61,7 @@ const quotes = [{
     {
         citation: "Alice in Wonderland",
         quote: "Who in the world am I? Ah, that's the great puzzle.",
-        source: "― Lewis Carroll",
+        source: "Lewis Carroll",
         year: 1865
     }
 ];
