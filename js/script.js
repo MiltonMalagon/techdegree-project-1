@@ -8,7 +8,7 @@ project 1 - A Random Quote Generator
 // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
 
 /*** 
- * "quotes" array
+ * The "quotes" array stores objects with popular quotes that will be displayed in the web page each time the user clicks on "Show another quote" button
  ***/
 const quotes = [{
         citation: "Client-Side Programming with JavaScript",
@@ -69,7 +69,7 @@ const quotes = [{
 // console.log(quotes); /* testing array */
 
 /***
- * "getRandomQuote" function creates a random number to randomly select an item from the provided array
+ * The "getRandomQuote" function creates a random number to randomly select an item from the provided array
  * @param {Array} arr - The array to be evaluated
  * @return {Object} - The random object inside the provided array 
  ***/
@@ -81,7 +81,7 @@ function getRandomQuote(arr) {
 }
 
 /***
- * "printQuote" function calls "getRandomQuote" function to get a random object and build a HTML string with  the object's properties
+ * The "printQuote" function calls "getRandomQuote" function to get a random object and build a HTML string with the object's properties
  * @return {sting} - The HTML string to be printed in the web page
  ***/
 function printQuote() {
@@ -97,7 +97,7 @@ function printQuote() {
         randomHTML += `<span class="year">${randomObject.year}</span>`;
     }
     randomHTML += `</p>`;
-    document.getElementById('quote-box').innerHTML = randomHTML;
+    document.getElementById('quote-box').innerHTML = randomHTML; /* code snippet provided by Treehouse */
     // console.log(randomObject, randomHTML); /* testing variables */
     return randomHTML;
 }
@@ -107,4 +107,4 @@ function printQuote() {
  * DO NOT CHANGE THE CODE BELOW!!
  ***/
 
-document.getElementById('load-quote').addEventListener("click", printQuote, false);
+document.getElementById('load-quote').addEventListener("click", printQuote, false); /* code snippet provided by Treehouse */
