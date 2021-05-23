@@ -66,11 +66,12 @@ const quotes = [{
     }
 ];
 
-console.log(quotes);
-
 /***
  * `getRandomQuote` function
  ***/
+function getRandomQuote() {
+
+}
 
 
 
