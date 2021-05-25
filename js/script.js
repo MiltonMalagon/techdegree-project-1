@@ -84,6 +84,7 @@ const quotes = [{
  * @return {Object} - The random object inside the provided array.
  ***/
 function getRandomQuote(arr) {
+    /* Creating random number and selecting object randomly from "quotes" array */
     let randomNumber = Math.floor(Math.random() * arr.length);
     let randomItem = arr[randomNumber];
 
@@ -98,11 +99,11 @@ function getRandomQuote(arr) {
  * @return {string} - The concatenated HTML string to be printed in the web page.
  ***/
 function printQuote() {
-    /* Getting random object and logging its properties into HTML elements */
+    /* Getting random object and inserting its properties into HTML elements */
     let randomObject = getRandomQuote(quotes);
     let randomHTML = `
-      <p class="quote">${randomObject.quote}</p>
-      <p class="source">${randomObject.source}
+        <p class="quote">${randomObject.quote}</p>
+        <p class="source">${randomObject.source}
     `;
 
     /* Adding additional properties to HTML variable if available */
@@ -115,6 +116,8 @@ function printQuote() {
     if (randomObject.tags) {
         randomHTML += `<br><span><small>${randomObject.tags.join(" / ")}</small></span>`;
     }
+
+    /* Closing HTML paragraph */
     randomHTML += `</p>`;
 
     /* Code snippet provided by Treehouse */
@@ -137,7 +140,7 @@ function changeBackgroundColor() {
         blue: Math.floor(Math.random() * 256)
     };
 
-    /* Storing RGB color and pushing it into <body> tag as an CSS attribute */
+    /* Storing RGB color and pushing it into "body" tag as an CSS attribute */
     let randomColor = `rgb(${randomHues.red}, ${randomHues.green}, ${randomHues.blue})`;
     document.querySelector("body").style.backgroundColor = randomColor;
 
@@ -146,7 +149,18 @@ function changeBackgroundColor() {
 }
 
 /* Testing function */
-// getBackgroundColor();
+// changeBackgroundColor();
+
+/***
+ * The "updateQuote" updates the current quote printed in the page and the background color.
+ ***/
+function updateQuote() {
+    setInterval(printQuote, 15000);
+    setInterval(changeBackgroundColor, 15000);
+}
+
+/* Calling "updateQuote" function */
+updateQuote();
 
 /***
  * click event listener for the print quote button
