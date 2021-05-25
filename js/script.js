@@ -8,7 +8,7 @@ project 1 - A Random Quote Generator
 // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
 
 /*** 
- * The "quotes" array stores a list of objects with popular quotes that will be displayed in the web page each time the user clicks on "Show another quote" button
+ * The "quotes" array stores a list of objects with popular quotes that will be displayed in the web page each time the user clicks on "Show another quote" button.
  ***/
 const quotes = [{
         citation: "Client-Side Programming with JavaScript",
@@ -79,9 +79,9 @@ const quotes = [{
 // console.log(quotes);
 
 /***
- * The "getRandomQuote" function creates a random number and randomly select an item from the provided array
- * @param {Array} arr - The array to be evaluated
- * @return {Object} - The random object inside the provided array 
+ * The "getRandomQuote" function creates a random number and randomly select an item from the provided array.
+ * @param {Array} arr - The array to be evaluated.
+ * @return {Object} - The random object inside the provided array.
  ***/
 function getRandomQuote(arr) {
     let randomNumber = Math.floor(Math.random() * arr.length);
@@ -94,8 +94,8 @@ function getRandomQuote(arr) {
 }
 
 /***
- * The "printQuote" function calls "getRandomQuote" function to get a random object and build a HTML string with the object's properties
- * @return {string} - The HTML string to be printed in the web page
+ * The "printQuote" function calls "getRandomQuote" function to get a random object and build a HTML string with the object's properties.
+ * @return {string} - The concatenated HTML string to be printed in the web page.
  ***/
 function printQuote() {
     /* Getting random object and logging its properties into HTML elements */
@@ -126,13 +126,19 @@ function printQuote() {
     return randomHTML;
 }
 
+/***
+ * The "changeBackgroundColor" function creates a random hue for RGB property to display a random color each time the user clicks on "Show another quote" button.
+ ***/
 function changeBackgroundColor() {
+    /* Creating a different hue number for Red, Green, and Blue */
     const randomHues = {
         red: Math.floor(Math.random() * 256),
         green: Math.floor(Math.random() * 256),
         blue: Math.floor(Math.random() * 256)
     };
-    randomColor = `rgb(${randomHues.red}, ${randomHues.green}, ${randomHues.blue})`;
+
+    /* Storing RGB color and pushing it into <body> tag as an CSS attribute */
+    let randomColor = `rgb(${randomHues.red}, ${randomHues.green}, ${randomHues.blue})`;
     document.querySelector("body").style.backgroundColor = randomColor;
 
     /* Testing "randomColor" variable */
@@ -149,4 +155,6 @@ function changeBackgroundColor() {
 
 /* Code snippet provided by Treehouse */
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
-document.getElementById('load-quote').addEventListener("click", getBackgroundColor, false);
+
+/* Code copied from Treehouse snippet targeting "changeBackgroundColor" function */
+document.getElementById('load-quote').addEventListener("click", changeBackgroundColor, false);
