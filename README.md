@@ -16,4 +16,4 @@ The program is built with:
 
 - Two event listeners:
     - The first runs "printQuote" function on click. **_Code snippet provided by Team Treehouse_**
-    - The second runs "changeBackgroundColor" function on click. *Code snippet copied from Team Treehouse*
+    - The second runs "changeBackgroundColor" function on click. **_Code snippet copied from Team Treehouse_**
