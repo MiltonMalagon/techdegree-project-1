@@ -79,7 +79,7 @@ const quotes = [{
 // console.log(quotes);
 
 /***
- * The "getRandomQuote" function creates a random number and randomly select an item from the provided array.
+ * The "getRandomQuote" function creates a random number and randomly selects an item from the provided array.
  * @param {Array} arr - The array to be evaluated.
  * @return {Object} - The random object inside the provided array.
  ***/
