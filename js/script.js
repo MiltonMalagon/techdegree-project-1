@@ -8,7 +8,7 @@ project 1 - A Random Quote Generator
 // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
 
 /*** 
- * The "quotes" array stores a list of objects with popular quotes that will be displayed in the web page each time the user clicks on "Show another quote" button.
+ * The "quotes" array stores a list of objects with popular quotes that will be displayed on the web page each time the user clicks on the "Show another quote" button.
  ***/
 const quotes = [{
         citation: "Client-Side Programming with JavaScript",
@@ -75,7 +75,7 @@ const quotes = [{
     }
 ];
 
-/* Testing "quotes" array */
+/* "quotes" array testing */
 // console.log(quotes);
 
 /***
@@ -88,18 +88,18 @@ function getRandomQuote(arr) {
     let randomNumber = Math.floor(Math.random() * arr.length);
     let randomItem = arr[randomNumber];
 
-    /* Testing "randomNumber" and "randomItem" variables */
+    /* "randomNumber" and "randomItem" variables testing */
     // console.log(randomNumber, randomItem);
 
     return randomItem;
 }
 
 /***
- * The "printQuote" function calls "getRandomQuote" function to get a random object and build a HTML string with the object's properties.
- * @return {string} - The concatenated HTML string to be printed in the web page.
+ * The "printQuote" function calls "getRandomQuote" function to get a random object and build an HTML string with the object's properties.
+ * @return {string} - The concatenated HTML string to be printed on the web page.
  ***/
 function printQuote() {
-    /* Getting random object and inserting its properties into HTML elements */
+    /* Getting random object and inserting their properties into HTML elements */
     let randomObject = getRandomQuote(quotes);
     let randomHTML = `
         <p class="quote">${randomObject.quote}</p>
@@ -117,20 +117,20 @@ function printQuote() {
         randomHTML += `<br><span><small>${randomObject.tags.join(" / ")}</small></span>`;
     }
 
-    /* Closing HTML paragraph */
+    /* HTML paragraph closing */
     randomHTML += `</p>`;
 
     /* Code snippet provided by Treehouse */
     document.getElementById('quote-box').innerHTML = randomHTML;
 
-    /* Testing "randomObject" and "randomHTML" variables */
+    /* "randomObject" and "randomHTML" variables testing */
     // console.log(randomObject, randomHTML);
 
     return randomHTML;
 }
 
 /***
- * The "changeBackgroundColor" function creates a random hue for RGB property to display a random color each time the user clicks on "Show another quote" button.
+ * The "changeBackgroundColor" function creates a random hue for the RGB property to display a random color each time the user clicks on the "Show another quote" button.
  ***/
 function changeBackgroundColor() {
     /* Creating a different hue number for Red, Green, and Blue */
@@ -140,26 +140,26 @@ function changeBackgroundColor() {
         blue: Math.floor(Math.random() * 256)
     };
 
-    /* Storing RGB color and pushing it into "body" tag as an CSS attribute */
+    /* Storing RGB color and pushing it into the "body" tag as a CSS attribute */
     let randomColor = `rgb(${randomHues.red}, ${randomHues.green}, ${randomHues.blue})`;
     document.querySelector("body").style.backgroundColor = randomColor;
 
-    /* Testing "randomColor" variable */
+    /* "randomColor" variable testing */
     // console.log(randomColor);
 }
 
-/* Testing function */
+/* Function testing */
 // changeBackgroundColor();
 
 /***
- * The "updateQuote" updates the current quote printed in the page and the background color.
+ * The "updateQuote" function updates the current quote printed on the page and the background color.
  ***/
 function updateQuote() {
     setInterval(printQuote, 15000);
     setInterval(changeBackgroundColor, 15000);
 }
 
-/* Calling "updateQuote" function */
+/* "updateQuote" function calling */
 updateQuote();
 
 /***
