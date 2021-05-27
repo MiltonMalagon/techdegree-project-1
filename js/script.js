@@ -94,6 +94,9 @@ function getRandomQuote(arr) {
     return randomItem;
 }
 
+/* Function testing */
+// getRandomQuote(quotes);
+
 /***
  * The "printQuote" function calls "getRandomQuote" function to get a random object and build an HTML string with the object's properties.
  * @return {string} - The concatenated HTML string to be printed on the web page.
@@ -128,6 +131,9 @@ function printQuote() {
 
     return randomHTML;
 }
+
+/* Function testing */
+// printQuote();
 
 /***
  * The "changeBackgroundColor" function creates a random hue for the RGB property to display a random color each time the user clicks on the "Show another quote" button.
